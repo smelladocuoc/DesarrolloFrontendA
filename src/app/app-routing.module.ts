@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DataComponent } from './components/Data/data.component';
+import { DataComponent } from './components/data/data.component';
 import { GridComponent } from './components/grid/grid.component';
 import { CardComponent } from './components/card/card.component';
 
