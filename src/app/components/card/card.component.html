@@ -1,0 +1,27 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<div class="loading" *ngIf="showSpinner">
+    <mat-spinner></mat-spinner>
+</div>
+
+<div class="container">
+    <h1>Lista</h1>
+    <div class="buttons">
+        <button mat-fab color="primary" aria-label="Example icon button with a heart icon" [routerLink]="['/card']">
+            <mat-icon>grid_view</mat-icon>
+        </button>
+        <button mat-fab color="primary" aria-label="Example icon button with a heart icon" [routerLink]="['/grid']">
+            <mat-icon>table_rows</mat-icon>
+        </button>
+    </div>
+
+    <div>
+        <mat-card *ngFor="let element of elements" [routerLink]="['/image', element.id]"
+            class="card animate__animated animate__bounce animate__fadeIn">
+            <mat-card-content>
+                {{element.id}}
+                = {{element.name}}
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
