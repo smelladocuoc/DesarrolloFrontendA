@@ -1,4 +1,4 @@
-export interface Image {
+export interface Data {
     id: string;
     image_pokemon: string;
     name: string;

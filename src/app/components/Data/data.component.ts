@@ -1,36 +1,36 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Image } from 'src/app/models/image.interface';
-import { ImagesService } from 'src/app/services/images.service';
+import { Data } from 'src/app/models/data.interface';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
-  selector: 'app-image',
-  templateUrl: './image.component.html',
-  styleUrls: ['./image.component.css']
+  selector: 'app-data',
+  templateUrl: './data.component.html',
+  styleUrls: ['./data.component.css']
 })
-export class ImageComponent {
-  image!: Image;
+export class DataComponent {
+  data!: Data;
   showDetails: boolean = false;
   showSpinner: boolean = false;
   showSpinnerDetails: boolean = false;
 
-  constructor(private ImagesService: ImagesService, private activatedRoute: ActivatedRoute, private router: Router) {
+  constructor(private DataService: DataService, private activatedRoute: ActivatedRoute, private router: Router) {
   }
 
   ngOnInit(): void {
     const identifier = this.activatedRoute.snapshot.paramMap.get('id');
 
-    this.ImagesService.getImageById(identifier!).subscribe((image) => {
+    this.DataService.getDataById(identifier!).subscribe((data) => {
 
-      if (!image) {
+      if (!data) {
         return this.router.navigateByUrl('/');
       }
 
-      this.image = image;
-      this.image.image_pokemon = image.sprites.front_default;
-      this.image.weight = image.weight;
-      this.image.ability = image.abilities[0].ability.name;
-      return image;
+      this.data = data;
+      this.data.image_pokemon = data.sprites.front_default;
+      this.data.weight = data.weight;
+      this.data.ability = data.abilities[0].ability.name;
+      return data;
     });
     setTimeout(() => {
       this.showSpinner = false;

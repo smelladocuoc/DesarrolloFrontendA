@@ -1,20 +1,20 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Image } from '../models/image.interface';
+import { Data } from '../models/data.interface';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ImagesService {
+export class DataService {
 
   constructor(private http: HttpClient) { }
 
-  getAllImages(): Observable<any> {
+  getAllData(): Observable<any> {
     return this.http.get<any>('https://pokeapi.co/api/v2/pokemon');
   }
 
-  getImageById(id: string): Observable<any> {
+  getDataById(id: string): Observable<any> {
     return this.http.get<any>('https://pokeapi.co/api/v2/pokemon/' + id);
   }
 }

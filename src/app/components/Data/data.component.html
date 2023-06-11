@@ -4,10 +4,10 @@
 
 <div class="container mt-5">
 
-    <div *ngIf="image" class="row animate__animated animate__bounce animate__fadeIn">
+    <div *ngIf="data" class="row animate__animated animate__bounce animate__fadeIn">
         <div class="col-md-9">
-            <p><strong>Name:</strong>{{image.name}}</p>
-            <img style="width: 40%; height: 40%;" class="rounded" src="{{image.image_pokemon}}" alt="">
+            <p><strong>Name:</strong>{{data.name}}</p>
+            <img style="width: 40%; height: 40%;" class="rounded" src="{{data.image_pokemon}}" alt="">
         </div>
 
         <div class="col-md-3">
@@ -18,9 +18,9 @@
             <button mat-raised-button color="primary" (click)="show()">Show all details</button>
             <mat-progress-bar mode="indeterminate" *ngIf="showSpinnerDetails"></mat-progress-bar>
             <div class="col-md-9" *ngIf="showDetails">
-                <p><strong>Identifier:</strong>{{image.id}}</p>
-                <p><strong>Weight:</strong>{{image.weight}}</p>
-                <p><strong>Ability:</strong>{{image.ability}}</p>
+                <p><strong>Identifier:</strong>{{data.id}}</p>
+                <p><strong>Weight:</strong>{{data.weight}}</p>
+                <p><strong>Ability:</strong>{{data.ability}}</p>
             </div>
         </div>
     </div>

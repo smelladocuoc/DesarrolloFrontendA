@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ImagesService } from 'src/app/services/images.service';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-grid',
@@ -13,17 +13,17 @@ export class CardComponent {
   pokemons = [];
   showSpinner: boolean = false;
 
-  constructor(private imagesService: ImagesService) {
+  constructor(private dataService: DataService) {
   }
 
   ngOnInit(): void {
     let pokemonData;
 
-    this.imagesService.getAllImages().subscribe((images) => {
+    this.dataService.getAllData().subscribe((data) => {
       for (let i = 0; i <= 19; i++) {
         pokemonData = {
           id: i + 1,
-          name: images.results[i].name
+          name: data.results[i].name
         };
         this.elements.push(pokemonData);
       }
