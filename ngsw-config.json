@@ -11,7 +11,11 @@
           "/index.html",
           "/manifest.webmanifest",
           "/*.css",
-          "/*.js"
+          "/*.js",
+          "/*.html",
+          "/src/app/components/card/*.html",
+          "/src/app/components/grid/*.html",
+          "/src/app/components/Data/*.html"
         ],
         "urls": [
           "https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -34,7 +38,8 @@
     {
       "name": "images-api",
       "urls": [
-        "https://picsum.photos/**"
+        "https://pokeapi.co/**",
+        "https://raw.githubusercontent.com/PokeAPI/sprites/**"
       ],
       "cacheConfig": {
         "maxSize": 10,
